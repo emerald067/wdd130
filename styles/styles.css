@@ -1,3 +1,10 @@
+/* Universal selector to reset default spacing and box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --primary-color: darkblue;
     --hover-color: navy;
@@ -8,24 +15,29 @@
     --footer-border: #000;
     --shadow-color: gray;
 }
+
 nav {
     background-color: var(--primary-color);
     padding: 10px;
     display: flex;
     gap: 20px;
 }
+
 nav a {
     color: var(--text-color);
     text-decoration: none;
     padding: 10px 20px;
 }
+
 nav a:hover {
     background-color: var(--hover-color);
     border-radius: 5px;
 }
+
 h1 {
     color: var(--primary-color);
 }
+
 main img {
     width: 150px;
     height: auto;
@@ -33,28 +45,37 @@ main img {
     padding: 2px;
     box-shadow: 0 0 30px var(--shadow-color);
 }
+
 p {
     padding: 0;
 }
+
 main {
     max-width: 840px;
     margin: auto;
 }
+
 aside {
     width: 20rem;
-    margin: 1rem;
-    border: 1px solid var(--border-color);
-    padding: 1rem;
-    background-color: var(--accent-bg);
-    color: var(--accent-text);
     text-align: center;
 }
+
 aside img {
     width: 200px;
     height: auto;
 }
+
 footer {
     margin-top: 15px;
     border-top: 1px solid var(--footer-border);
     text-align: center;
+}
+
+/* Class Selectors */
+.box {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--accent-bg);
+    color: var(--accent-text);
 }
