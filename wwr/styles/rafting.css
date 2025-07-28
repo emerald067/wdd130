@@ -1,79 +1,183 @@
+/* Root Variables */
 :root {
   --primary-color: #005f73; /* Midnight green */
   --secondary-color: #0a9396; /* Dark cyan */
   --accent1-color: #ee9b00; /* Gamboge */
   --accent2-color: #ffd166; /* Sunglow */
-  --heading-font: "Montserrat", sans-serif; /* Montserrat for headings */ 
-  --body-font: roboto, sans-serif; /* Roboto for body text */
+  --text-color: #ffffff; /* White text for contrast */
+  --font-heading: 'Montserrat', sans-serif; /* Montserrat for headings */
+  --font-body: 'Roboto', sans-serif; /* Roboto for body text */
 }
 
-* {
+/* Global Styles */
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  color: #333;
+  background-color: #f5f5f5;
 }
 
-body {
-  font-family: var(--body-font);
+a {
   color: var(--primary-color);
+  text-decoration: none;
 }
 
-header, main, footer {
-  width: 840px;
-  margin: 0 auto;
+a:hover {
+  text-decoration: underline;
 }
 
-h1, h2 {
-  font-family: var(--heading-font);
-  color: var(--primary-color);
+/* Header Styling */
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
-nav, p, section, article {
-  margin: 16px;
-  padding: 8px;
+header img.logo {
+  height: 60px;
 }
 
+header h1 {
+  margin-left: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.8rem;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+nav li a {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+/* Hero Section */
 .hero {
-  position: relative;
-}
-
-.hero img {
-  display: block;
-  width: 100%;
-  height: auto;
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 4px black;
 }
 
 .hero h1 {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  padding: 16px;
+  font-size: 3rem;
+  font-family: var(--font-heading);
+}
+
+/* History Section */
+.history {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.history h2 {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+}
+
+/* Adventure Section */
+.adventures {
+  padding: 2rem;
+  background-color: var(--accent2-color);
+}
+
+.adventure-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.adventure-gallery figure {
+  margin: 0;
   text-align: center;
-  opacity: 0.8;
-  background-color: var(--accent1-color);
-  color: #fff;
 }
 
-.hero article {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 16px;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.adventure-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.hero article img {
-  float: right;
-  width: 125px;
-  margin-left: 10px;
-  border-radius: 5px;
+.adventure-gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
 }
 
-.socialmedia a img{
-    text-decoration: none;
-    width: 40px;
-    
+/* Footer Styling */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  flex-wrap: wrap;
 }
+
+.socialmedia {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialmedia img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    height: 200px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 
