@@ -1,17 +1,11 @@
 :root {
   --primary-color: #005f73; /* Midnight green */
-  --secondary-color: #0a9396; /* Cark cyan */
+  --secondary-color: #0a9396; /* Dark cyan */
   --accent1-color: #ee9b00; /* Gamboge */
   --accent2-color: #ffd166; /* Sunflower */
   --text-color: #ffffff; /* White text for contrast */
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Roboto', sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -140,10 +134,12 @@ footer {
   background-color: var(--primary-color);
   color: white;
 }
+
 .socialmedia {
   display: flex;
   gap: 1rem;
 }
+
 .socialmedia img {
   width: 50px;
   height: 30px;
@@ -151,22 +147,16 @@ footer {
 
 @media (max-width:600px) {
   header {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .history-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  footer {
     flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
   }
-}
+  
+    nav ul {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
 
 .contact-form {
   background-color: #ffffff;
